@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\INewsRepository.cs" />
+    <Compile Include="Interfaces\INewsService.cs" />
     <Compile Include="News\NewsEntity.cs" />
     <Compile Include="News\NewsService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

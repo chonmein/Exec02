@@ -1,0 +1,23 @@
+﻿@using Exec02.FrontEnd.Application.ViewModels
+@model IEnumerable<NewsVM>
+
+<h3>消息列表</h3>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().Id)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().Title)</th>
+            <th>@Html.LabelFor(m => m.FirstOrDefault().PublishTime)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var news in Model)
+        {
+            <tr>
+                <td>@news.Id</td>
+                <td>@Html.ActionLink(news.Title, "DetailNews", new { news.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@news.PublishTime</td>
+            </tr>
+        }
+    </tbody>
+</table>

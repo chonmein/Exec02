@@ -10,23 +10,12 @@ namespace Exec02.FrontEnd.Site.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly HotNewsApi _hotNewsApi;
-
-		public HomeController(HotNewsApi hotNewsApi)
+        public HomeController()
 		{
-			_hotNewsApi = hotNewsApi;
 		}
 		public ActionResult Index()
 		{
 			return View();
-		}
-
-		public ActionResult _HotNews()
-		{
-			int maxRows = 5;
-			IEnumerable<HotNewsVM> model = _hotNewsApi.GetHotNews(maxRows);
-
-			return PartialView(model);
-		}
+		}		
 	}
 }

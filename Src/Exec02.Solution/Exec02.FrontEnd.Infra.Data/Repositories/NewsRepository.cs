@@ -24,5 +24,20 @@ namespace Exec02.FrontEnd.Infra.Data.Repositories
 
 			return data.Select(efModel => efModel.ToEntity());
 		}
-	}
+
+		public NewsEntity GetNews(int id)
+        {
+			News data = _context.News.Find(id);
+
+			return data.ToEntity();
+        }
+
+        public IEnumerable<NewsEntity> GetNewsList()
+        {
+			IEnumerable<News> data = _context.News
+				.OrderByDescending(news => news.PublishTime);
+
+			return data.Select(efModel=>efModel.ToEntity());
+        }
+    }
 }

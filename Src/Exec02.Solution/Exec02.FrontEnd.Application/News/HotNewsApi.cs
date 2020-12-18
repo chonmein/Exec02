@@ -6,27 +6,27 @@ using Exec02.FrontEnd.Domain.News;
 
 namespace Exec02.FrontEnd.Application.News
 {
-	public class HotNewsApi
-	{
-		private readonly NewsService _newsSvc;
+    public class HotNewsApi : IHotNewsApi
+    {
+        private readonly INewsService _newsSvc;
 
-		public HotNewsApi(NewsService newsSvc)
-		{
-			_newsSvc = newsSvc;
-		}
+        public HotNewsApi(INewsService newsSvc)
+        {
+            _newsSvc = newsSvc;
+        }
 
-		/// <summary>
-		/// 傳回最新的N則News
-		/// </summary>
-		/// <param name="maxRows"></param>
-		/// <returns></returns>
-		public IEnumerable<HotNewsVM> GetHotNews(int maxRows)
-		{
-			IEnumerable<NewsEntity> data = _newsSvc.GetHotNews(maxRows);
+        /// <summary>
+        /// 傳回最新的N則News
+        /// </summary>
+        /// <param name="maxRows"></param>
+        /// <returns></returns>
+        public IEnumerable<HotNewsVM> GetHotNews(int maxRows)
+        {
+            IEnumerable<NewsEntity> data = _newsSvc.GetHotNews(maxRows);
 
-			if (data == null) return Enumerable.Empty<HotNewsVM>();
+            if (data == null) return Enumerable.Empty<HotNewsVM>();
 
-			return data.Select(entity => entity.ToHotNewsVM());
-		}
-	}
+            return data.Select(entity => entity.ToHotNewsVM());
+        }
+    }
 }

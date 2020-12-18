@@ -12,7 +12,9 @@ namespace Exec02.FrontEnd.Infra.Data.Repositories
 				Id = efModel.Id,
 				Title = efModel.Title,
 				Content = efModel.Content,
-				PublishTime = efModel.PublishTime
+				PublishTime = efModel.PublishTime,
+				CreatedTime = efModel.CreatedTime,
+				LastModifiedTime = efModel.LastModifiedTime,
 			};
 		}
 	}

@@ -1,0 +1,30 @@
+﻿@using Exec02.FrontEnd.Application.ViewModels
+@model NewsVM
+
+<div class="card">
+    <div class="card-header">
+        <div class="form-row">
+            <div class="form-group mr-5">
+                <h2>@Model.Title</h2>
+            </div>
+            <div class="form-group mr-3">
+                @Html.LabelFor(m => m.CreatedTime)：
+                @Html.DisplayFor(m => m.CreatedTime)
+            </div>
+            <div class="form-group mr-3">
+                @Html.LabelFor(m => m.PublishTime)：
+                @Html.DisplayFor(m => m.PublishTime)
+            </div>
+            <div class="form-group mr-3">
+                @Html.LabelFor(m => m.LastModifiedTime)：
+                @Html.DisplayFor(m => m.LastModifiedTime)
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        @Model.Content
+    </div>
+    <div class="card-footer">
+        @Html.ActionLink("返回消息列表","Index",null,new { @class= "btn btn-primary" })        
+    </div>
+</div>

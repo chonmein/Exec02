@@ -10,8 +10,21 @@ namespace Exec02.FrontEnd.Application.News
 			return new HotNewsVM
 			{
 				Id=entity.Id,
-				Title = entity.Title
+				Title = entity.Title,
+				PublishTime = entity.PublishTime
 			};
 		}
+		public static NewsVM ToNewsVM(this NewsEntity entity)
+        {
+			return new NewsVM()
+			{
+				Id = entity.Id,
+				Content = entity.Content,
+				Title = entity.Title,
+				CreatedTime = entity.CreatedTime,
+				PublishTime = entity.PublishTime,
+				LastModifiedTime = entity.LastModifiedTime,
+			};
+        }
 	}
 }
