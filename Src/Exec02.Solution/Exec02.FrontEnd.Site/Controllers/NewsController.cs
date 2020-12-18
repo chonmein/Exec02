@@ -22,7 +22,7 @@ namespace Exec02.FrontEnd.Site.Controllers
         // GET: News
         public ActionResult Index()
         {
-            IEnumerable<NewsVM> model = _newsApi.GetNewsList();
+            IEnumerable<NewsIndexVM> model = _newsApi.GetNewsList();
             return View(model);
         }
 

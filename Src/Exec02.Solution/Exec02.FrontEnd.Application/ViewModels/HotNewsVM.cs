@@ -11,7 +11,7 @@ namespace Exec02.FrontEnd.Application.ViewModels
 		[Display(Name =	"標題")]
 		
 		public string Title { get; internal set; }
-		[Display(Name ="更新時間")]
+		[Display(Name ="發布時間")]
 		public DateTime PublishTime { get; internal set; }
 	}
 }

@@ -51,6 +51,7 @@
     <Compile Include="News\NewsEntityAssembler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\HotNewsVM.cs" />
+    <Compile Include="ViewModels\NewsIndexVM.cs" />
     <Compile Include="ViewModels\NewsVM.cs" />
   </ItemGroup>
   <ItemGroup>

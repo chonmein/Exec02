@@ -21,12 +21,12 @@ namespace Exec02.FrontEnd.Application.News
             return _newsService.GetNews(id).ToNewsVM();
         }
 
-        public IEnumerable<NewsVM> GetNewsList()
+        public IEnumerable<NewsIndexVM> GetNewsList()
         {
             var newsList = _newsService.GetNewsList();
             if (newsList == null)
-                return Enumerable.Empty<NewsVM>();
-            return newsList.Select(news =>news.ToNewsVM());
+                return Enumerable.Empty<NewsIndexVM>();
+            return newsList.Select(news =>news.ToNewsIndexVM());
         }
     }
 }

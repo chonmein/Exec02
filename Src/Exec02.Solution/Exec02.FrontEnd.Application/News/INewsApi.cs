@@ -9,7 +9,7 @@ namespace Exec02.FrontEnd.Application.News
 {
     public interface INewsApi
     {
-        IEnumerable<NewsVM> GetNewsList();
+        IEnumerable<NewsIndexVM> GetNewsList();
         NewsVM GetNews(int id);
     }
 }

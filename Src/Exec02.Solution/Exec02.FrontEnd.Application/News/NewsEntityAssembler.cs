@@ -26,5 +26,15 @@ namespace Exec02.FrontEnd.Application.News
 				LastModifiedTime = entity.LastModifiedTime,
 			};
         }
+
+		public static NewsIndexVM ToNewsIndexVM(this NewsEntity entity)
+        {
+			return new NewsIndexVM
+			{
+				Id = entity.Id,
+				Title = entity.Title,
+				PublishTime = entity.PublishTime
+			};
+		}
 	}
 }
