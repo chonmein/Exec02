@@ -5,14 +5,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{872EDB18-89B7-4D75-9FBC-2457A680108C}</ProjectGuid>
+    <ProjectGuid>{AB3D54FB-DEA8-4CAF-B85B-702CFEF186B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Exec02.FrontEnd.Application</RootNamespace>
-    <AssemblyName>Exec02.FrontEnd.Application</AssemblyName>
+    <RootNamespace>專案單元測試</RootNamespace>
+    <AssemblyName>專案單元測試</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -34,12 +35,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.4.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq, Version=4.15.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.15.2\lib\net45\Moq.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,25 +61,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="News\HotNewsApi.cs" />
-    <Compile Include="News\IHotNewsApi.cs" />
-    <Compile Include="News\INewsApi.cs" />
-    <Compile Include="News\NewsApi.cs" />
-    <Compile Include="News\NewsEntityAssembler.cs" />
+    <Compile Include="資料庫測試.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\HotNewsVM.cs" />
-    <Compile Include="ViewModels\NewsIndexVM.cs" />
-    <Compile Include="ViewModels\NewsVM.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Exec02.FrontEnd.Application\Exec02.FrontEnd.Application.csproj">
+      <Project>{872edb18-89b7-4d75-9fbc-2457a680108c}</Project>
+      <Name>Exec02.FrontEnd.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Exec02.FrontEnd.Domain\Exec02.FrontEnd.Domain.csproj">
       <Project>{3dd6b2cd-5dd9-4390-afc4-c4ce6509954f}</Project>
       <Name>Exec02.FrontEnd.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Exec02.FrontEnd.Infra.Data\Exec02.FrontEnd.Infra.Data.csproj">
+      <Project>{b37de03a-0430-4f0a-8b35-43b515e45022}</Project>
+      <Name>Exec02.FrontEnd.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -19,7 +19,10 @@ namespace Exec02.FrontEnd.Domain.News
 
         public NewsEntity GetNews(int id)
         {
-            return _newsRepository.GetNews(id);
+            var News = _newsRepository.GetNews(id);
+            if (News != null)
+                return News;
+            return new NewsEntity();
         }
 
         public IEnumerable<NewsEntity> GetNewsList()
